@@ -26,7 +26,7 @@ export default function PostDetails() {
 
   // Fetch post details & comments on load
   useEffect(() => {
-    fetch(`https://blogappapi-fznw.onrender.com/blogs/${postId}`)
+    fetch(`https://blogappapi-d0pa.onrender.com/blogs/${postId}`)
       .then((res) => res.json())
       .then((data) => {
         if (data._id) {
@@ -47,7 +47,7 @@ export default function PostDetails() {
 
   // Edit post
   function editPost() {
-    fetch(`https://blogappapi-fznw.onrender.com/blogs/${postId}/update`, {
+    fetch(`https://blogappapi-d0pa.onrender.com/blogs/${postId}/update`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function PostDetails() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://blogappapi-fznw.onrender.com/blogs/${postId}/delete`, {
+        fetch(`https://blogappapi-d0pa.onrender.com/blogs/${postId}/delete`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -108,7 +108,7 @@ export default function PostDetails() {
       return;
     }
 
-    fetch(`https://blogappapi-fznw.onrender.com/blogs/${postId}/comment`, {
+    fetch(`https://blogappapi-d0pa.onrender.com/blogs/${postId}/comment`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

@@ -16,7 +16,7 @@ export default function Login() {
 
 	function authenticate(e) {
 		e.preventDefault();
-		fetch(`https://blogappapi-fznw.onrender.com/users/login`, {
+		fetch(`https://blogappapi-d0pa.onrender.com/users/login`, {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json"
