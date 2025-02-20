@@ -48,7 +48,7 @@ export default function Login() {
 		}
 
 		function retrieveUserDetails(token) {
-		fetch("https://blogappapi-fznw.onrender.com/users/details", {
+		fetch("https://blogappapi-d0pa.onrender.com/users/details", {
 			headers: { Authorization: `Bearer ${token}` }
 		})
 		.then(res => res.json())
