@@ -25,7 +25,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/users/details`, {
+    fetch(`https://blogappapi-d0pa.onrender.com/users/details`, {
       headers: {
         Authorization: `Bearer ${ localStorage.getItem('token') }`
       }
