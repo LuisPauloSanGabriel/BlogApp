@@ -25,7 +25,7 @@ export default function DeletePost({ blog, fetchData }) {
           return;
         }
 
-        fetch(`http://localhost:4000/blogs/${postId}/delete`, {
+        fetch(`https://blogappapi-fznw.onrender.com/blogs/${postId}/delete`, {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
         })

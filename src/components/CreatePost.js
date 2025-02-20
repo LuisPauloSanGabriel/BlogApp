@@ -23,7 +23,7 @@ export default function CreatePost({ fetchData }) {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:4000/blogs/", {
+      const res = await fetch("https://blogappapi-fznw.onrender.com/blogs/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
