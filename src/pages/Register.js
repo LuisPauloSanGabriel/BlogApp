@@ -28,7 +28,7 @@ export default function Register() {
   function registerUser(e) {
     e.preventDefault();
 
-    fetch(`https://blogappapi-d0pa.onrender.com/users/register`, {
+    fetch(`https://blogappapi-i362.onrender.com/users/register`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",

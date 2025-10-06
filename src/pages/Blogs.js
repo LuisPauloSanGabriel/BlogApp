@@ -9,7 +9,7 @@ export default function Blogs() {
 
     const fetchData = useCallback(async () => {
     try {
-        const res = await fetch("https://blogappapi-d0pa.onrender.com/blogs/all", {
+        const res = await fetch("https://blogappapi-i362.onrender.com/blogs/all", {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         });
         const data = await res.json();

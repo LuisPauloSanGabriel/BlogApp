@@ -25,7 +25,7 @@ export default function EditPost({ blog, fetchData }) {
   function editPost(e) {
     e.preventDefault(); // Prevent default form submission
 
-    fetch(`https://blogappapi-d0pa.onrender.com/blogs/${postId}/update`, {
+    fetch(`https://blogappapi-i362.onrender.com/blogs/${postId}/update`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
