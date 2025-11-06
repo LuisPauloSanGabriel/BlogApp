@@ -199,12 +199,13 @@ export default function PostDetails() {
                       : "Anonymous"}
                   </Card.Subtitle>
 
-                  {user && (
+                  {user && post.author && user.id === post.author._id && (
                     <>
                       <Button variant="primary" className="me-2 mt-3" onClick={() => setIsEditing(true)}>Edit</Button>
                       <Button variant="danger" className="mt-3" onClick={deletePost}>Delete</Button>
                     </>
                   )}
+
                   <h5 className="mt-4">Comments</h5>
                   {comments.length > 0 ? (
                     comments.map((c) => (
@@ -216,13 +217,21 @@ export default function PostDetails() {
                       </strong>
                       : <br /> {c.comment} <br />
                         <small className="text-muted">{new Date(c.createdAt).toLocaleString()}</small>
-                        {user && user.id === c.user && (
-                          <div className="mt-2">
-                  <Button variant="danger" size="sm" className="ms-2" onClick={() => deleteComment(c._id)}>
-                    Delete
-                  </Button>
-                  </div>
-                )} {console.log("User:", user, "Comment:", c)}
+                        {user && c.user && (
+                          (user.id === c.user._id || user.id === post.author._id) && (
+                            <div className="mt-2">
+                              <Button
+                                variant="danger"
+                                size="sm"
+                                className="ms-2"
+                                onClick={() => deleteComment(c._id)}
+                              >
+                                Delete
+                              </Button>
+                            </div>
+                          )
+                        )}
+                         {console.log("User:", user, "Comment:", c)}
                       </div>
                     ))
                   ) : (
