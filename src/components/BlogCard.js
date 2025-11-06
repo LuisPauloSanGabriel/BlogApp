@@ -13,12 +13,20 @@ export default function BlogCard({ blogProp }) {
 
   const { _id, title, content, author, createdAt } = blogProp;
 
+  console.log("BlogCard author:", author);
+
+  
   return (
     <Card>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{content}</Card.Text>
-        <Card.Text>User: {author}</Card.Text>
+        <Card.Text>
+          Author: {author && author.firstName && author.lastName
+            ? `${author.firstName} ${author.lastName}`
+            : "Anonymous"}
+        </Card.Text>
+
         <Card.Text>{new Date(createdAt).toLocaleString()}</Card.Text>
         <Link className="btn btn-primary mt-auto" to={user.id ? `/blogs/${_id}` : "/login"}>
           {user.id ? "Read more" : "Log in"}

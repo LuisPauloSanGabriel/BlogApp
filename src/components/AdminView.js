@@ -17,7 +17,12 @@ export default function AdminView({ blogData, fetchData }) {
                     <td>{blog._id}</td>
                     <td>{blog.title}</td>
                     <td>{blog.content}</td>
-                    <td>{blog.author}</td>
+                    <td>
+                      {blog.author && blog.author.firstName && blog.author.lastName
+                        ? `${blog.author.firstName} ${blog.author.lastName}`
+                        : "Anonymous"}
+                    </td>
+
                     <td> <EditBlog blog={blog} fetchData={fetchData} /> </td>
                      <td><DeletePost blog={blog} fetchData={fetchData}/></td>
                 </tr>

@@ -28,7 +28,7 @@ export default function Userview({ blogData, fetchData }) {
 
   return (
     <>
-      <h1 className="text-center my-5">All blogs</h1>
+      <h1 className="text-center my-5">Newsfeed</h1>
       
       {/* Show CreatePost only if user is logged in */}
       {user.id && <CreatePost fetchData={fetchData} />}

@@ -193,7 +193,12 @@ export default function PostDetails() {
                 <>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Text>{post.content}</Card.Text>
-                  <Card.Subtitle className="text-muted">Author: {post.author}</Card.Subtitle>
+                  <Card.Subtitle className="text-muted">
+                    Author: {post.author && post.author.firstName && post.author.lastName
+                      ? post.author.firstName + " " + post.author.lastName
+                      : "Anonymous"}
+                  </Card.Subtitle>
+
                   {user && (
                     <>
                       <Button variant="primary" className="me-2 mt-3" onClick={() => setIsEditing(true)}>Edit</Button>
@@ -204,7 +209,12 @@ export default function PostDetails() {
                   {comments.length > 0 ? (
                     comments.map((c) => (
                       <div key={c._id} className="border p-2 mb-2 rounded">
-                        <strong>{c.user}</strong>: <br /> {c.comment} <br />
+                        <strong>
+                        {c.user.firstName && c.user.lastName
+                          ? `${c.user.firstName} ${c.user.lastName}`
+                          : "Anonymous"}
+                      </strong>
+                      : <br /> {c.comment} <br />
                         <small className="text-muted">{new Date(c.createdAt).toLocaleString()}</small>
                         {user && user.id === c.user && (
                           <div className="mt-2">
